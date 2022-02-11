@@ -1,0 +1,17 @@
+[
+    {
+        "course":"breakfast",
+        "ingredients":[
+                        "eggs",
+                        "bacon",
+                        "tortilla",
+                        "cheese"],
+        "key_ingredient": "eggs",
+        "cook_time": "15",
+        "serving_size":"1",
+        "vegitarian": false,
+        "hot":true,
+        "instructions": "Put bacon into hot pan and cook until desired crispiness. Scramble eggs and cook in seperate pan until desired doneness. Warm tortilla on stove. Mix cooked eggs and bacon ontop of tortilla. Top with cheese. Roll tortilla arround egg bacon and cheese mixture and enjoy.",
+        "author": 1
+    }
+]
