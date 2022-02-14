@@ -1055,23 +1055,5 @@
         "hot":false,
         "instructions": "In a medium stock pot, boil water, add salt and cook noodles. When finished, place noodles in an ice water bath to cool. Drain and set aside. In a medium bowl combine, sesame oil, vinegar, soy sauce, hot chili oil, hoisin and extra-virgin olive oil. Mix thoroughly and then combine prepared vegetables and noodles. Garnish with sesame seeds and peanuts.",
         "author": 1
-    },
-    {
-        "course":"lunch",
-        "title": "Sushi rice",
-        "ingredients":[
-            "2 cup short-grain rice",
-            "2 cup water",
-            "1\/4 cup rice vinegar",
-            "2 1\/2 tablespoon sugar",
-            "1 tablespoon mirin",
-            "3\/4 teaspoon salt"],
-        "key_ingredient": "rice",
-        "cook_time": "45",
-        "serving_size":"4",
-        "vegitarian": false,
-        "hot":true,
-        "instructions": "Place the rice in a bowl. Add cold water to cover and wash the rice well by rubbing it between your hands, then drain. Repeat twice more. Pour the rice into a strainer to drain. Place the rinsed rice and the 2 cups water in a 2 to 3-quart saucepan. Bring to a boil over high heat, reduce the heat to low, cover and cook for 20 minutes. Turn off the heat and let the rice stand for 10 minutes. In a small pan, heat the vinegar, sugar, mirin and salt over medium heat until the sugar dissolves. Remove from the heat. Turn out the cooked rice into a large wooden or plastic bowl, and pour the vinegar mixture evenly over the rice. Fold the liquid in with a wooden rice paddle. At the same time, fan the rice to bring out the luster of the grains. Continue fanning and folding until the rice absorbs all the liquid. Cover with a damp cloth and let stand until ready to use. It will hold at room temperature for up to 4 hours.",
-        "author": 1
-    }    
+    }
 ]
