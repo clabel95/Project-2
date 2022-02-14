@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 
-class User_recipes extends Model{}
+class Saved_recipes extends Model{}
 
-User_recipes.init(
+Saved_recipes.init(
     {
         user_id: {
             //foreign key that links to that user. 
@@ -14,22 +14,23 @@ User_recipes.init(
                 key:'id'
             }
         },
-        My_recipe_id: {
-            // instead of an array stored here we will store each recipe reference with a reference to the users id.
+        Saved_Recipe_id: {
+            // instead of an array stored here we will store each recipe with a reference to the users id.
             type: DataTypes.INTEGER,
-            reference: {
-                model: 'recipes',
-                key:'id'
+            reference:{
+                model:'recipes',
+                key:'id',
             }
-        },
+
+        }
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName:true,
         underscored: true,
-        modelName: 'user_recipes'
+        modelName: 'saved_recipes'
     }
 )
 
-module.exports = User_recipes;
+module.exports = Saved_recipes;
