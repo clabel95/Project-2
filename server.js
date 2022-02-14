@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // need to set up routes in controllers and api folder
-// app.use(routes);
+app.use(routes);
 
 
 
