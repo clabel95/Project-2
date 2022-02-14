@@ -35,8 +35,8 @@ Recipes.init(
         },
         instructions: {
             // a string of text that lists the steps for creating the dish.
-            type: DataTypes.TEXT,
-            allowNull: false,
+            // type: DataTypes.TEXT,
+            // allowNull: false,
         },
         author: {
             // the authors unique id which will be used to retrieve the authors username when displaying the dish.
