@@ -1,6 +1,7 @@
 [
     {
         "course":"breakfast",
+        "title": "egg tacos",
         "ingredients":[
                         "eggs",
                         "bacon",
