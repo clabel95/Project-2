@@ -14,6 +14,9 @@ Recipes.init(
         },
         ingredients: {
             // an array of ingredients that are required for the recipe
+            type: DataTypes.TEXT,
+            get: function(){return JSON.parse(this.getDataValue('ingredients'));},
+            set: function(val){return this.setDataValue("ingredients", JSON.stringify(val));}
         },
         key_ingredient: {
             // a single ingredient that is the centerpiece for that recipe.
