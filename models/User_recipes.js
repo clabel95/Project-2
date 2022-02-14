@@ -14,7 +14,7 @@ User_recipes.init(
                 key:'id'
             }
         },
-        My_recipe_id: {
+        my_recipe_id: {
             // instead of an array stored here we will store each recipe reference with a reference to the users id.
             type: DataTypes.INTEGER,
             reference: {

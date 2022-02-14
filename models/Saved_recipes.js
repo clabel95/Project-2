@@ -14,7 +14,7 @@ Saved_recipes.init(
                 key:'id'
             }
         },
-        Saved_Recipe_id: {
+        saved_recipe_id: {
             // instead of an array stored here we will store each recipe with a reference to the users id.
             type: DataTypes.INTEGER,
             reference:{

@@ -48,7 +48,7 @@ Recipes.init(
             type:DataTypes.STRING,
             allowNull:false,
         },
-        user_id: {
+        author_id: {
             // the authors unique id which will be used to retrieve the authors username when displaying the dish.
             type:DataTypes.INTEGER,
             references:{
