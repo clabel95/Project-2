@@ -20,7 +20,14 @@ router.post('/', async (req, res) => {
     catch (err){ res.status(400).json(err);}
 });
 
-
+// delete route to dele a recipe
+router.delete('/:id', async (req, res) => {
+    try {
+        const deleteRecipe = await Recipes.destroy({where: {id: req.params.id},});
+        res.status(200).json(deleteRecipe);
+    }
+    catch (err){ res.status(500).json(err);}
+});
 
 
 module.exports = router;
