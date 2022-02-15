@@ -50,7 +50,8 @@ Recipes.init(
         },
         instructions: {
             // a string of text that lists the steps for creating the dish.
-            type:DataTypes.STRING,
+            //changed from string to TEXT since items to store are big
+            type:DataTypes.TEXT,
             allowNull:false,
         },
         author_id: {

@@ -21,7 +21,8 @@ Ingredients.init(
         },
         ingredients: {
             // instead of an array stored here we will store each ingredient with a reference to the recipe id.
-            type: DataTypes.STRING,
+           //changed from string to TEXT since items to store are big
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         
