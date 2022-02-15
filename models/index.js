@@ -23,15 +23,18 @@ User.belongsToMany(Recipes,{
     as: 'many-Recipes'
 });
 
+
 // //each recipe in user recipes belongs to a single user.
 // User_recipes.belongsTo(User,{
 //     foreignKey:'user_id'
 // });
 
+
 // //there can be many recipes in the user recipes list.
 // User_recipes.hasMany(Recipes,{
 //     foreignKey:'my_recipe_id'
 // });
+
 
 // //there are many recipes that can be saved recipes.
 // Saved_recipes.hasMany(Recipes, {
@@ -80,6 +83,7 @@ Ingredients.belongsTo(Recipes,{
 // Saved_recipes.hasMany(Recipes,{
 //     foreignKey:'saved_recipe_id'
 // });
+
 
 // //a recipe can only have one author
 // Recipes.belongsTo(User, {

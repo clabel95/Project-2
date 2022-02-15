@@ -1,6 +1,15 @@
 const router = require('express').Router();
+
+router.get('/', (req, res) => {
+    res.render("home")
+})
+
+router.get('/search', (req, res) => {
+    res.render("searchHeader")
+})
+
 const sequelize = require('../config/connection');
-const { Recipes } = require('../models'); //, User, User_recipes }
+const { Recipes } = require('../models');
 
 // get route to display all recipes
 router.get('/', async (req,res) => {
