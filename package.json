@@ -4,7 +4,8 @@
   "description": "recipe app",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,13 +18,17 @@
   },
   "homepage": "https://github.com/clabel95/Project-2#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "csv-database": "^0.9.2",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
     "express-session": "^1.17.2",
+    "find-config": "^1.0.0",
     "handlebars": "^4.7.7",
     "hbs": "^4.2.0",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
     "sequelize": "^6.16.1"
   }
 }
