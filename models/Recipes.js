@@ -18,6 +18,11 @@ Recipes.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        // added by Maribel
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         key_ingredient: {
             // a single ingredient that is the centerpiece for that recipe.
             type: DataTypes.STRING,
