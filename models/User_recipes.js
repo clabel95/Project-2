@@ -6,6 +6,12 @@ class User_recipes extends Model{}
 
 User_recipes.init(
     {
+        id:{ // added by Maribel
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
         user_id: {
             //foreign key that links to that user. 
             type: DataTypes.INTEGER,
