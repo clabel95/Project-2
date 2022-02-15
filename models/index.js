@@ -52,7 +52,8 @@ Recipes.belongsToMany(Saved_recipes,{
 });
 
 //each recipe has one author
-Recipes.hasOne(User,{
+// changed from hasOne to belongs to, error otherwise when loading seeds
+Recipes.belongsTo(User,{
     foreignKey:'author_id'
 });
 
@@ -66,10 +67,11 @@ Ingredients.belongsTo(Recipes,{
     foreignKey:'recipe_id'
 })
 
-//a recipe can have many ingredients.
-Recipes.hasMany(Ingredients,{
-    foreignKey:'recipe_id'
-});
+// comment it out due to being repetition of line 61
+// //a recipe can have many ingredients.
+// Recipes.hasMany(Ingredients,{
+//     foreignKey:'recipe_id'
+// });
 
 Saved_recipes.hasMany(Recipes,{
     foreignKey:'saved_recipe_id'
@@ -81,10 +83,11 @@ Recipes.belongsTo(User, {
 });
 
 
+module.exports = {Recipes, Ingredients, Saved_recipes, User, User_recipes };
 
-
-module.exports = { User_recipes };
-module.exports = { Saved_recipes };
-module.exports = { Recipes };
-module.exports = { Ingredients };
-module.exports = { User };
+// comment it out and replace it with line 86, it was giving errors otherwise
+// module.exports = { User_recipes };
+// module.exports = { Saved_recipes };
+// module.exports = { Recipes };
+// module.exports = { Ingredients };
+// module.exports = { User };
