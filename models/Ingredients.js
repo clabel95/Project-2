@@ -5,6 +5,12 @@ const sequelize = require('../config/connection');
 class Ingredients extends Model{}
 Ingredients.init(
     {
+        id:{ // added by Maribel
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
         recipe_id: {
             // id of that recipe which can be saved into the user_recipes arrays
             type: DataTypes.INTEGER,
