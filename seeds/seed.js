@@ -37,3 +37,6 @@ const seedDatabase = async () => {
     process.exit(0);
 }
 seedDatabase();
+
+// recipeSeedData.json was collected and modified from tabatkins/recipe-db database.
+// https://github.com/tabatkins/recipe-db/blob/master/db-recipes.json
