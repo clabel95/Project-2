@@ -1,65 +1,125 @@
 *, *:before, *:after {
     box-sizing: border-box;
+    font-family: 'Libre Baskerville', serif;
 }
 
-
-
-#header {
+#header{
+    align-items: center;
     text-align: center;
     margin: 15px 15px auto 180px;
     border: black solid;
     background-color: burlywood;
     border-radius: 5px;
-}
-/* belongs to header */
-/* .search{
-   /* display: flex; */
-   /* justify-content: space-evenly; */
-/* } */
-
-#span{
     display: flex;
     justify-content: space-evenly;
-    min-width: 0;
+    /* text-decoration: underline wavy black; */
     /* width: 100%; */
     min-width: fit-content;
+    
+    white-space: nowrap;
     flex-wrap: wrap;
+   
+    
     /* flex-direction: column; */
 }
 
-span input{
-    /* min-width: 0; */
-    height:35px;
-    margin: -25px auto 8px auto;
+h3 {
+    font-size: 2.92rem;
+    line-height: 110%;
+    margin: 30px;
+    margin-bottom: 40px;
+    text-decoration: underline wavy black 1px;
+}
+
+#rat{
+    font-size:24px;
+    margin: -42px -231px -5px 216px;
+    /* text-decoration: underline wavy burlywood 1px; */
+}
+
+input{
+    font-family:'Libre Baskerville', serif; 
     
 }
 
+input[type=text]:not(.browser-default){
+    margin-top: 26px;
+}
+#authorSearch{
+    display: inline-block;
+}
+/*search icon*/
+i.small {
+    font-size: 13px;
+    
+}
 
+#search1, #search2, #search3{
+    font-size: 18px;
+    background-color: burlywood;
+    border-radius: 110px;
+    height: 35px;
+    width: 35px;
+    border: 0.5px black solid;
+    display: inline-block;
+    flex-wrap: wrap;
+    cursor: pointer;
+    
+}
+
+#subHeader{
+    border: black solid;
+    border-radius: 5px;
+    margin: 20px 35px auto 200px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    height: 78px;
+}
+
+#found{
+    text-decoration: underline wavy black 1px;
+    font-size: 24px;
+}
+
+#filter1, #filter2, #filter3, #filter4{
+    width: 210px;
+    height: 40px;
+    border: black solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*everything above this line involves the header section*/
+
+
+/* side nav blue bar */
 .column.side{
     justify-content: center;
     width: 190px;
     padding: 15px;
 }
 
+/* side nav blue bar buttons*/
 ul {
     position: absolute;
     list-style-type: none;
-    margin: -189px auto auto auto;
+    margin: -236px auto auto auto;
     border: black solid;
     background-color:rgb(13, 144, 187);
     padding: 10px;
-    height: 800px;
+    height: 830px;
     overflow: auto;
     border-radius: 5px;
+    
 }
-/* from materialize */
+
+/* override materialize */
 ul:not(.browser-default){
     padding-left: 10px;
     list-style-type: none;
 }
 
-
-  
 li {
     display: block;
     color: #000;
@@ -70,45 +130,52 @@ li {
 
 li button {
     height: 60px;
-    width: 120px;
+    width: 123px;
     border: black solid;
-    
+    font-family: 'Libre Baskerville', serif;
+    cursor: pointer;
 }
 
 li select {
     height: 40px;
-    width: 120px;
+    width: 123px;
     border: black solid;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 13px;
 }
 
 #search{
     margin-top: 100px;
 }
 
+
+/*everything below: these are the cards, specifically the container of all the cards*/
 .column.middle{
      position: relative;
      display: flex;
-     margin-top: 50px;
+     margin-top: 0px;
      margin-left: auto;
      margin-right: auto;
-     width: 60%;
-     gap: 8%;
+     width: 70%;
+     gap: 2%;
 }
 
 .card{
-    /* width: 280px; */
-    min-width: 120px;
-    height: 140px;
+    width: 380px;
+    min-width: 220px;
+    height: 160px;
     border-radius: 20px;
     
 }
-.card.img{
-    border: black solid;
-    border-radius: 20px;
+
+
+.card .card-image {
+    position: relative;
+    height: 250px;
 }
 
 .card .card-image .card-title {
-    height: 25px;
+    height: 15px;
     color: black;
     /* position: absolute; */
     bottom: 0;
@@ -118,21 +185,51 @@ li select {
     border-left: black solid;
     border-right: black solid;
 }
+
+.card .card-title {
+    font-size: 18px;
+    font-weight: 300;
+    /* text-decoration: underline black solid; */
+}
 .card-title{
     background-color: whitesmoke;
     
 }
 
-.row{
-    border-radius: 20px;
-    
-}
-#card1,#card2,#card3{
-    width: 300px;
-    min-width: 220px;
-    height: 200px;
 
-   
+
+/* materialize overide for cards input(recipe name,ingredients,etc)*/
+input[type=text]:not(.browser-default){
+        background-color: transparent;
+        border-top: none;
+        border-bottom: 2px solid #9e9e9e;
+        border-radius: 0;
+        outline: none;
+        height: 2rem;
+        width: 100%;
+        font-size: 16px;
+        margin: 0 0 5px 0;
+        padding: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        -webkit-transition: border .3s, -webkit-box-shadow .3s;
+        transition: border .3s, -webkit-box-shadow .3s;
+        transition: box-shadow .3s, border .3s;
+        transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+        transition-property: box-shadow, border, -webkit-box-shadow;
+        transition-duration: 0.3s, 0.3s, 0.3s;
+        transition-timing-function: ease, ease, ease;
+        transition-delay: 0s, 0s, 0s;
+}
+
+
+
+#card1,#card2,#card3{
+    width: 350px;
+    min-width: 420px;
+    height: 200px;
 }
 
 #card1 img,#card2 img,#card3 img{
@@ -146,19 +243,36 @@ li select {
     
 }
 
-.card-content{
+.input-field {
+    position: relative;
+    margin-top: 0rem; 
+    margin-bottom: 0rem;
+}
+/* materialize */
+html{
+    line-height: normal;
+}
+
+.card-content1, .card-content2, .card-content3{
     border: black solid;
     border-top: none;
     border-radius: 20px;
-   
-    
 }
 
-.card .card-content {
-    padding: 20px;
+.card .card-content1, .card-content2, .card-content3 {
+    padding: 30px;
     border-radius: 0 0 2px 24px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+}
+
+#ingredient1, #ingredient2, #ingredient3, #ingredient4, 
+#recipe1, #recipe2, #recipe3,
+#chef1, #chef2, #chef3,
+#cookTime1, #cookTime2, #cookTime3{
+    display: flex;
+    border-bottom: 2px solid currentColor;
+    line-height: 2em;
 }
