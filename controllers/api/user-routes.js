@@ -69,8 +69,8 @@ router.post('/login', async (req, res) => {
 //logout post - session will be destroied
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) { req.session.destroy(() => { 
-          res.json({message: 'You are now logged out!' }); res.status(204).end(); }); } 
-          // res.status(204).end(); }); } 
+          // res.json({message: 'You are now logged out!' }); res.status(204).end(); }); } 
+          res.status(204).end(); }); } 
   else { res.status(404).end();}
 });
 

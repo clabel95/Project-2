@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const { Recipes, Ingredients, Saved_recipes, User, User_recipes }  = require('../models');
+const withAuth = require('../utils/auth');
 
 // homepage gets all recipes
 router.get('/', async (req, res) => {
@@ -109,7 +111,6 @@ router.get('/search/:cook_time', (req, res) => {
 
 // ~~~~~Done~~~~~~~~~
 // login page to create user or log in, if already log in send to homepage
-
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) { res.redirect('/'); return; }
