@@ -10,13 +10,11 @@ router.get('/', async (req, res) => {
             include: [{model: Ingredients, attributes: ['ingredients']}, {model:User, attributes: ['username'] },],
         });
         //serialize data so the template can read it
-        console.log(RecipeData.ingredients);
         const Allrecipe = RecipeData.map((recipe) => recipe.get({ plain: true }));
         //pass serialized data and session flag into template
         // const ONEingredient = Allrecipe.filter(( ingredients ).map((ingredient) => ingredient)))
         // .map(({ id }) => id);
 
-        console.log(Allrecipe.ingredients);
         // res.status(200).json(Allrecipe);
         res.render("home", { Allrecipe, logged_in: req.session.logged_in });
     }
