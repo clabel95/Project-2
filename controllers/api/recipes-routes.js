@@ -3,13 +3,14 @@ const { Recipes, Ingredients, Saved_recipes, User, User_recipes }  = require('..
 const withAuth = require('../../utils/auth');
 
 
-// post route to create a new recipe
+/// post route to create a new recipe
 router.post('/', withAuth, async (req, res) => {
     try{
         // create the model tables for the recipe and use the author_id = login user
         const createRecipe = await Recipes.create({
             ...req.body, author_id: req.session.user_id});
-
+        // create the log for the user_receipes
+        const setUser = await User_recipes.create({user_id: req.session.user_id , my_recipe_id: createRecipe.getDataValue('id'),});
         // create the model of each ingredient
         if(req.body.ingredients.length){
             // map all ingredients in the ingredients array and create object

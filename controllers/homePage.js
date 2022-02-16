@@ -1,42 +1,33 @@
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
-    res.render("home")
+// get my recipes - list of recipes created by user
+router.get('/user/:author_id', async (req, res) => {
+    try{
+        const UserData = await User.findByPk(req.params.author_id, {
+            attributes: { exclude: ['password'] },
+            include: [{model:Recipes, as:'many-Recipes', attributes: ['title', 'course', 'cook_time', 'serving_size', 'instructions'], }], // 
+        });
+        // validate if id exists
+        if (!UserData){ res.status(404).json({ message: 'No user found with that id!' }); return; }
+        //serialize data so the template can read it
+        const user_Data = UserData.get({ plain: true });
+        //pass serialized data and session flag into template
+        // res.status(200).json(user_Data);
+        res.render("home", { ...user_Data, logged_in: req.session.logged_in });
+    }
+    catch (err){ res.status(500).json(err); }
 })
 
-router.get('/search', (req, res) => {
+// search by recipe course - display it on home or search header
+router.get('/search/:course', (req, res) => {
     res.render("searchHeader")
 })
 
-const sequelize = require('../config/connection');
-const { Recipes } = require('../models');
-
-// get route to display all recipes
-router.get('/', async (req,res) => {
-    try{
-        const recipeALL = await Recipes.findAll();
-        res.status(200).json(recipeALL);
-    }
-    catch (err){ res.status(500).json(err);}
+// login page to create user or log in, if already log in send to homepage
+router.get('/login', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) { res.redirect('/home'); return; }
+    res.render('login');
 });
-
-// post route to create a new recipe
-router.post('/', async (req, res) => {
-    try{
-        const createRecipe = await Recipes.create(req.body);
-        res.status(200).json(createRecipe);
-    }
-    catch (err){ res.status(400).json(err);}
-});
-
-// delete route to dele a recipe
-router.delete('/:id', async (req, res) => {
-    try {
-        const deleteRecipe = await Recipes.destroy({where: {id: req.params.id},});
-        res.status(200).json(deleteRecipe);
-    }
-    catch (err){ res.status(500).json(err);}
-});
-
 
 module.exports = router;
