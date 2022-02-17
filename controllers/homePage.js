@@ -22,7 +22,7 @@ router.get('/search', (req, res) => {
 // login page to create user or log in, if already log in send to homepage
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
-    // if (req.session.logged_in) { res.redirect('/'); return; }
+    if (req.session.logged_in) { res.redirect('/'); return; }
     res.render('login',{
         style: "login.css"
     }); // ***** need to create a login handler

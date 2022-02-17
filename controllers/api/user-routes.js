@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const { Recipes, Ingredients, Saved_recipes, User, User_recipes }  = require('../../models');
+const { Recipes, Ingredients, Saved_recipes, User, User_recipes }  = require('../../models');
 
 // router.get('/', async (req, res) => {
 //     // Add a comment describing the purpose of the render method
