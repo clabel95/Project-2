@@ -1,43 +1,43 @@
 <div id="header">
 
-    <h3>Anyone Can Cook <div id="rat">®</div>
+    <h3>Anyone Can Cook <span id="rat">®</span>
     </h3>
-    <!-- <span id="rat">®</span> -->
+
 
     <div id="ingredientSearch">
         <div>
-            <input type="text" placeholder="Search by ingredient" name="search">
-            <button id="search1" i class="tiny material-icons">search</i></button>
+            <span><input id="ingredient_search" type="text" placeholder="Search by ingredient" name="search">
+                <button id="search1"> <i class="tiny material-icons">search</i></button></span>
         </div>
     </div>
     <div id="recipeSearch">
         <div>
-            <input type="text" placeholder="Search for recipe" name="search">
-            <button id="search2" i class="tiny material-icons">search</i></button>
+            <input id="recipe_search" type="text" placeholder="Search for recipe" name="search">
+            <button id="search2"> <i class="tiny material-icons">search</i></button>
         </div>
     </div>
     <div id="authorSearch">
         <div>
-            <input type="text" placeholder="Search by author" name="search">
-            <button id="search3" i class="tiny material-icons">search</i></button>
+            <input id="author_search" type="text" placeholder="Search by author" name="search">
+            <button id="search3"> <i class="tiny material-icons">search</i></button>
         </div>
     </div>
 </div>
 <div id="subHeader">
     <div>
-        <p id="found">Found (#) Recipes:</p>
+        <p id="found">Found <span id="filterFound">(#)</span> Recipes:</p>
     </div>
     <div>
-        <button id="filter1" placeholder="filter">filter</button>
+        <button id="filter1" placeholder="filter">filter <i id="x" class=" material-icons">clear</i></button>
     </div>
     <div>
-        <button id="filter2" placeholder="filter">filter</button>
+        <button id="filter2" placeholder="filter">filter<i id="x" class=" material-icons">clear</i></button>
     </div>
     <div>
-        <button id="filter3" placeholder="filter">filter</button>
+        <button id="filter3" placeholder="filter">filter<i id="x" class=" material-icons">clear</i></button>
     </div>
     <div>
-        <button id="filter4" placeholder="filter">filter</button>
+        <button id="filter4" placeholder="filter">filter<i id="x" class=" material-icons">clear</i></button>
     </div>
 
 </div>
@@ -45,18 +45,10 @@
 
 <div class="column side">
     <ul>
-        {{!-- <li><button id="login"> Login </button></li> --}}
-        <li>
-        {{#if logged_in}}
-        <button id="logout">logout</button>
-        {{else}}
-        <button id="login"><a href="/login">login</a></button>
-        {{/if}}
-        </li>
-
+        <li><button id="login"> Login </button></li>
         <li><button id="my_recipes"> My Recipes</button></li>
         <li><button id="saved_recipes"> Saved Recipes</button></li>
-        <li><button id="top_recipes"> Top Recipes </button></li>
+        <li><button><a href="/addrecipe" id="addRecipe"> Add Recipe </a></button></li>
         <li><button id="inspire_me"> Inspire Me </button></li>
         <br>
 
@@ -95,49 +87,40 @@
 <!--this is all 3 cards-->
 <div class="column middle">
 
-
     <div id="card1">
 
         <div class="card">
             <div class="card-image">
                 <img src="/images/chad-montano-food .jpg">
                 <span class="card-title">Add your recipe below!</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light red">
+                    <i class="material-icons">favorite_border</i></a>
             </div>
             <div class="card-content1">
                 <div class="input-field">
-                    <p for="recipe1"> Recipe Name:</p>
-                    <p id="recipe1"> pizza </p>
-
-                    <!-- <p id="recipe1">  </p> -->
-
+                    <p id="recipe3">
+                        <label for="recipe3"> Recipe Name: </label>
+                        <span id="test"> &nbsp; (Your added name of recipe) </span>
+                    </p>
                 </div>
                 <div class="input-field">
-
-                    <p for="cookTime1"> Prep/Cook Time: </p>
-                    <p id="cookTime1"></p>
+                    <p id="cookTime3" type="text">
+                        <label for="cookTime3"> Prep/Cook Time: </label>
+                        <span id="test2">&nbsp;(Add your time) </span>
+                    </p>
                 </div>
                 <div class="input-field">
-
-                    <p for="ingredient1">Key Ingredient:</p>
-                    <p id="ingredient1"></p>
-                </div>
-                <!-- <div class="input-field">
-                        <input id="ingredient2" type="text">
-                        <label for="ingredient2">Key Ingredient:</label>
-                    </div>
-                    <div class="input-field">
-                        <input id="ingredient3" type="text">
+                    <p id="ingredient3" type="text">
                         <label for="ingredient3">Key Ingredient:</label>
-                    </div>
-                    <div class="input-field">
-                        <input id="ingredient4" type="text">
-                        <label for="ingredient4">Key Ingredient:</label> 
-                    </div> -->
-                <div class="input-field">
-                    <p for="chef1">Chef:</p>
-                    <p id="chef1"></p>
+                        <span id="test3"> &nbsp; (Spice) </span>
+                    </p>
+                </div>
 
+                <div class="input-field">
+                    <p id="chef3" type="text">
+                        <label for="chef3">Chef:</label>
+                        <span id="test4"> &nbsp; (Your name here) </span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -150,39 +133,39 @@
             <div class="card-image">
                 <img src="/images/chad-montano-food .jpg">
                 <span class="card-title">Add your recipe below </span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light red">
+                    <i class="material-icons">favorite_border</i></a>
             </div>
             <div class="card-content2">
 
                 <div class="input-field">
-                    <input id="recipe2" type="text">
-                    <label for="recipe2"> Recipe Name: </label>
+                    <p id="recipe2">
+                        <label for="recipe2"> Recipe Name: </label>
+                        <span id="test"> &nbsp; Pizza </span>
+                    </p>
                 </div>
                 <div class="input-field">
-                    <input id="cookTime2" type="text">
-                    <label for="cookTime2"> Prep/Cook Time: </label>
+                    <p id="cookTime2" type="text">
+                        <label for="cookTime2"> Prep/Cook Time: </label>
+                        <span id="test2">&nbsp; 10min </span>
+                    </p>
                 </div>
                 <div class="input-field">
-                    <input id="ingredient1" type="text">
-                    <label for="ingredient1">Key Ingredient:</label>
+                    <p id="ingredient2" type="text">
+                        <label for="ingredient2">Key Ingredient:</label>
+                        <span id="test3"> &nbsp;Flavortown </span>
+                    </p>
                 </div>
+
                 <div class="input-field">
-                    <input id="ingredient2" type="text">
-                    <label for="ingredient2">Key Ingredient:</label>
-                </div>
-                <div class="input-field">
-                    <input id="ingredient3" type="text">
-                    <label for="ingredient3">Key Ingredient:</label>
-                </div>
-                <div class="input-field">
-                    <input id="ingredient4" type="text">
-                    <label for="ingredient4">Key Ingredient:</label>
-                </div>
-                <div class="input-field">
-                    <input id="chef2" type="text">
-                    <label for="chef2">Chef:</label>
+                    <p id="chef3" type="text">
+                        <label for="chef3">Chef:</label>
+                        <span id="test4"> &nbsp; Guy Fieri </span>
+                    </p>
                 </div>
             </div>
+
+
         </div>
     </div>
     <div id="card3">
@@ -190,49 +173,42 @@
             <div class="card-image">
                 <img src="/images/chad-montano-food .jpg">
                 <span class="card-title">Add your recipe below </span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light red">
+                    <i class="material-icons">favorite_border</i></a>
             </div>
             <div class="card-content3">
 
                 <div class="input-field">
-                    <input id="recipe3" type="text">
-                    <label for="recipe3"> Recipe Name: </label>
+                    <p id="recipe3">
+                        <label for="recipe3"> Recipe Name: </label>
+                        <span id="test"> &nbsp; </span>
+                    </p>
                 </div>
                 <div class="input-field">
-                    <input id="cookTime3" type="text">
-                    <label for="cookTime3"> Prep/Cook Time: </label>
+                    <p id="cookTime3" type="text">
+                        <label for="cookTime3"> Prep/Cook Time: </label>
+                        <span id="test2">&nbsp; </span>
+                    </p>
                 </div>
                 <div class="input-field">
-                    <input id="ingredient1" type="text">
-                    <label for="ingredient1">Key Ingredient:</label>
+                    <p id="ingredient3" type="text">
+                        <label for="ingredient3">Key Ingredient:</label>
+                        <span id="test3"> &nbsp; </span>
+                    </p>
                 </div>
+
                 <div class="input-field">
-                    <input id="ingredient2" type="text">
-                    <label for="ingredient2">Key Ingredient:</label>
-                </div>
-                <div class="input-field">
-                    <input id="ingredient3" type="text">
-                    <label for="ingredient3">Key Ingredient:</label>
-                </div>
-                <div class="input-field">
-                    <input id="ingredient4" type="text">
-                    <label for="ingredient4">Key Ingredient:</label>
-                </div>
-                <div class="input-field">
-                    <input id="chef3" type="text">
-                    <label for="chef3">Chef:</label>
+                    <p id="chef3" type="text">
+                        <label for="chef3">Chef:</label>
+                        <span id="test4"> &nbsp; </span>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
 
-
-
-</div>
-
-
-<!-- <div id="card3">
+    <!-- <div id="card3">
         
 
         <div class="card">
