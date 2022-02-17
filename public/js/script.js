@@ -50,7 +50,7 @@ var chef_3  = document.getElementById("chef3");
 document.querySelector("#search1").addEventListener("click", function(event){
   event.preventDefault();
   FILTER_1 = document.getElementById("ingredient_search").value;
-  document.getElementById("filter"+TOTAL_FILTERS).value =  document.getElementById("ingredient_search").value;
+  document.getElementById("filter1").value =  document.getElementById("ingredient_search").value;
   document.getElementById("filter1").style.display = "inline";
   TOTAL_FILTERS += 1;     
 });
@@ -58,7 +58,7 @@ document.querySelector("#search1").addEventListener("click", function(event){
 document.querySelector("#search2").addEventListener("click", function(event){
   event.preventDefault();
   FILTER_2 = document.getElementById("recipe_search").value;
-  document.getElementById("filter"+TOTAL_FILTERS).value =  document.getElementById("recipe_search").value;
+  document.getElementById("filter2").value =  document.getElementById("recipe_search").value;
   document.getElementById("filter2").style.display = "inline";
   TOTAL_FILTERS += 1;     
 });
@@ -66,19 +66,38 @@ document.querySelector("#search2").addEventListener("click", function(event){
 document.querySelector("#search3").addEventListener("click", function(event){
   event.preventDefault();
   FILTER_3 = document.getElementById("author_search").value;
-  document.getElementById("filter"+TOTAL_FILTERS).value =  document.getElementById("author_search").value;
+  document.getElementById("filter3").value =  document.getElementById("author_search").value;
   document.getElementById("filter3").style.display = "inline";
   TOTAL_FILTERS += 1;     
 });
 
 
+
+//listener for the delete filter buttons--------------------------------------
 document.querySelector("#filter1").addEventListener("click", function(event){
   event.preventDefault();
   FILTER_1 = "";
   document.getElementById("filter1").style.display = "none";
   document.getElementById("filter1").value = "";
   TOTAL_FILTERS -= 1;
-})
+});
+
+document.querySelector("#filter2").addEventListener("click", function(event){
+  event.preventDefault();
+  FILTER_2 = "";
+  document.getElementById("filter2").style.display = "none";
+  document.getElementById("filter2").value = "";
+  TOTAL_FILTERS -= 1;
+});
+
+document.querySelector("#filter3").addEventListener("click", function(event){
+  event.preventDefault();
+  FILTER_3 = "";
+  document.getElementById("filter3").style.display = "none";
+  document.getElementById("filter3").value = "";
+  TOTAL_FILTERS -= 1;
+});
+//listener for the delete filter buttons--------------------------------------
 
 
 

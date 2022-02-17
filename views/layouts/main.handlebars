@@ -9,14 +9,24 @@
     {{!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/{{style}}" />
 </head>
 
 <body>
     <main>
         {{{body}}}
+
+        
     </main>
     <script src="/js/script.js"></script>
-</body>
+
+    {{!-- {{{body}}}  --}}
+
+     <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+  <script src="./js/logout.js"></script>
+  {{/if}} 
+  
+</body> 
 
 </html>
