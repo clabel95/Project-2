@@ -1,7 +1,7 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
+const {engine} = require('express-handlebars');
 const session = require('express-session');
-const hbs = exphbs.create({});
+// const hbs = exphbs.create({});
 const path = require('path');
 
 // const session = require('express-session');
@@ -12,6 +12,10 @@ const routes = require('./controllers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+if(process.env.NODE_ENV === 'production'){
+    //set static folder
+    app.use(express.static(path.join(__dirname, 'public')));
+}
 
 const sess = {
     secret: 'secrets',
@@ -21,9 +25,11 @@ const sess = {
 
 app.use(session(sess));
 
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 // creates middleware > methods/functions/operations that are called between req, res
 app.use(express.json());
