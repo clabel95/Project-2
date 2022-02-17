@@ -31,15 +31,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-if(process.env.NODE_ENV === 'production'){
-    //set static folder
-    app.use(express.static('public'));
-}
-app.get('*',(req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
-});
-
-
 // creates middleware > methods/functions/operations that are called between req, res
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
