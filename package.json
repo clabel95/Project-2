@@ -16,6 +16,7 @@
   "bugs": {
     "url": "https://github.com/clabel95/Project-2/issues"
   },
+  "engines": { "node": "16.x", "npm": "8.x" },
   "homepage": "https://github.com/clabel95/Project-2#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
