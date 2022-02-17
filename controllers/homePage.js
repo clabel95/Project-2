@@ -18,6 +18,16 @@ router.get('/search', (req, res) => {
     res.render("searchHeader")
 })
 
+// ~~~~~Done~~~~~~~~~
+// login page to create user or log in, if already log in send to homepage
+router.get('/login', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    // if (req.session.logged_in) { res.redirect('/'); return; }
+    res.render('login',{
+        style: "login.css"
+    }); // ***** need to create a login handler
+});
+
 
 
 // homepage gets all recipes
@@ -127,11 +137,11 @@ router.get('/search/:cook_time', (req, res) => {
 
 // ~~~~~Done~~~~~~~~~
 // login page to create user or log in, if already log in send to homepage
-router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) { res.redirect('/'); return; }
-    res.render('login'); // ***** need to create a login handler
-});
+// router.get('/login', (req, res) => {
+//     // If the user is already logged in, redirect the request to another route
+//     if (req.session.logged_in) { res.redirect('/'); return; }
+//     res.render('login'); // ***** need to create a login handler
+// });
 
 
 
