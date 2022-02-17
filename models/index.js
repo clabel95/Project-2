@@ -20,7 +20,7 @@ const Saved_recipes = require('./Saved_recipes');
 //users can belong to many different recipes.
 User.belongsToMany(Recipes,{
     through: {model: User_recipes, unique: false},
-    as: 'many-Recipes',
+    as: 'many_Recipes',
     foreignKey: 'user_id',
 });
 
@@ -50,7 +50,7 @@ Saved_recipes.belongsTo(User,{
 //each recipe belongs to one user.
 Recipes.belongsToMany(User,{
     through: {model: User_recipes, unique: false},
-    as: 'many-Users',
+    as: 'many_Users',
     foreignKey: 'my_recipe_id',
 });
 
