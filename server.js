@@ -1,7 +1,7 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
+const {engine} = require('express-handlebars');
 // const session = require('express-session');
-const hbs = exphbs.create({});
+const hbs = engine.create({});
 const path = require('path');
 
 // const session = require('express-session');
@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 3001;
 
 // app.use(session(sess));
 
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 
