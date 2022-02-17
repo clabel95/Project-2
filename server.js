@@ -1,7 +1,7 @@
 const express = require('express');
-const {engine} = require('express-handlebars');
-// const session = require('express-session');
-const hbs = engine.create({});
+const exphbs = require('express-handlebars');
+const session = require('express-session');
+const hbs = exphbs.create({});
 const path = require('path');
 
 // const session = require('express-session');
@@ -13,21 +13,32 @@ const routes = require('./controllers');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// const sess = {
-//     secret: 'secrets',
-//     resave: false,
-//     saveUninitialized: true,
-// };
+const sess = {
+    secret: 'secrets',
+    resave: false,
+    saveUninitialized: true,
+};
 
-// app.use(session(sess));
+app.use(session(sess));
 
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
+if(process.env.NODE_ENV === 'production'){
+    //set static folder
+    app.use(express.static('public'));
+}
+app.get('*',(req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
+});
+
+
 // creates middleware > methods/functions/operations that are called between req, res
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
 
