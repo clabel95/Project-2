@@ -1,0 +1,78 @@
+#header{
+    align-items: center;
+    text-align: center;
+    margin: 15px 15px auto 180px;
+    border: black solid;
+    background-color: burlywood;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: underline wavy black 1px;
+    min-width: fit-content;
+    /* height: 80px; */
+    /* white-space: nowrap; */
+    flex-wrap: wrap;
+}
+
+#newRecipe{
+    font-size: 40px;
+}
+
+/* side nav blue bar */
+.column.side{
+    justify-content: center;
+    width: 190px;
+    padding: 15px;
+}
+
+/* side nav blue bar buttons*/
+ul {
+    position: absolute;
+    list-style-type: none;
+    margin: -108px auto auto auto;
+    border: black solid;
+    background-color:rgb(13, 144, 187);
+    padding: 10px;
+    height: 830px;
+    overflow: auto;
+    border-radius: 5px;
+    
+}
+
+#my_recipes{
+    color: black;
+}
+
+/* override materialize */
+ul:not(.browser-default){
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+li {
+    display: block;
+    color: #000;
+    padding: 1px 3px;
+    text-decoration: none;
+    
+}
+
+li button {
+    height: 60px;
+    width: 123px;
+    border: black solid;
+    font-family: 'Libre Baskerville', serif;
+    cursor: pointer;
+}
+
+li select {
+    height: 40px;
+    width: 123px;
+    border: black solid;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 13px;
+}
+
+#search{
+    margin-top: 100px;
+}

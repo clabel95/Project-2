@@ -3,6 +3,17 @@
     font-family: 'Libre Baskerville', serif;
 }
 
+button:hover{
+    box-shadow: 0 0 5px black;
+}
+
+.btn-floating.halfway-fab{
+    bottom: -14px;
+}
+.btn-floating.halfway-fab:hover{
+    box-shadow: 0 0 8px black;
+}
+
 #header{
     align-items: center;
     text-align: center;
@@ -33,8 +44,7 @@ h3 {
 
 #rat{
     font-size:24px;
-    margin: -42px -231px -5px 216px;
-    /* text-decoration: underline wavy burlywood 1px; */
+    
 }
 
 input{
@@ -44,7 +54,10 @@ input{
 
 input[type=text]:not(.browser-default){
     margin-top: 26px;
+    border-bottom: underline wavy black 1px;
 }
+
+
 #authorSearch{
     display: inline-block;
 }
@@ -76,6 +89,7 @@ i.small {
     display: flex;
     justify-content: space-around;
     height: 78px;
+    background-color:rgba(48, 119, 48, 0.849);
 }
 
 #found{
@@ -89,7 +103,17 @@ i.small {
     border: black solid;
     border-radius: 5px;
     cursor: pointer;
+    font-family:'Libre Baskerville', serif;
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-around;
+    /* display: none; */
 }
+
+/*  */
+
+
 /*everything above this line involves the header section*/
 
 
@@ -99,12 +123,16 @@ i.small {
     width: 190px;
     padding: 15px;
 }
+/*sidebar button*/
+#addRecipe {
+    color: black;
+}
 
-/* side nav blue bar buttons*/
+/* side nav blue bar*/
 ul {
     position: absolute;
     list-style-type: none;
-    margin: -236px auto auto auto;
+    margin: -240px auto auto auto;
     border: black solid;
     background-color:rgb(13, 144, 187);
     padding: 10px;
@@ -189,7 +217,8 @@ li select {
 .card .card-title {
     font-size: 18px;
     font-weight: 300;
-    /* text-decoration: underline black solid; */
+    text-decoration: underline black solid;
+    
 }
 .card-title{
     background-color: whitesmoke;
@@ -268,11 +297,22 @@ html{
     border-bottom-left-radius: 20px;
 }
 
+
+
 #ingredient1, #ingredient2, #ingredient3, #ingredient4, 
 #recipe1, #recipe2, #recipe3,
 #chef1, #chef2, #chef3,
 #cookTime1, #cookTime2, #cookTime3{
     display: flex;
     border-bottom: 2px solid currentColor;
-    line-height: 2em;
+    line-height: 1.5em;
+}
+
+#recipe, #ingredient, #cookTime, #chef{
+    margin: 0px 0px 0px 0px; 
+    text-decoration: underline solid black 1.5px;
+}
+
+label{
+    font-size: 12px;
 }

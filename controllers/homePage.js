@@ -2,6 +2,24 @@ const router = require('express').Router();
 const { Recipes, Ingredients, Saved_recipes, User, User_recipes }  = require('../models');
 const withAuth = require('../utils/auth');
 
+router.get('/', (req, res) => {
+    res.render("home",{
+        style:"style.css"
+    })
+})
+
+router.get('/addrecipe', (req,res)=>{
+    res.render("addrecipe",{
+        style: "addrecipe.css"
+    })
+})
+
+router.get('/search', (req, res) => {
+    res.render("searchHeader")
+})
+
+
+
 // homepage gets all recipes
 router.get('/', async (req, res) => {
     try{
@@ -114,5 +132,7 @@ router.get('/login', (req, res) => {
     if (req.session.logged_in) { res.redirect('/'); return; }
     res.render('login'); // ***** need to create a login handler
 });
+
+
 
 module.exports = router;
