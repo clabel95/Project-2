@@ -1,12 +1,11 @@
-{{#each Onerecipe as |Onerecipe| }}
-
+{{#each userRecipe as |userData| }}
     <div id="card1">
 
         <div class="card">
             <div class="card-image">
-                <a href="/recipe/{{Onerecipe.id}}">
+                <a href="/recipe/{{userData.id}}">
                 <img src="/images/chad-montano-food .jpg"></a>
-                <span class="card-title"> {{Onerecipe.title}} </span>
+                <span class="card-title"> {{userData.title}} </span>
                 <a class="btn-floating halfway-fab waves-effect waves-light red">
                 <i class="material-icons">favorite_border</i></a>
             </div>
@@ -14,29 +13,22 @@
             <div class="card-content1">
                 <div class="input-field">
                     <p id="recipe3">
-                        <label for="recipe3"><a href="/recipe/{{Onerecipe.id}}">Recipe Name: </a></label>
-                        <span id="test"> &nbsp; {{Onerecipe.title}} </span>
+                        <label for="recipe3"><a href="/recipe/{{userData.id}}">Recipe Name: </a></label>
+                        <span id="test"> &nbsp; {{userData.title}} </span>
                     </p>
                 </div>
 
                 <div class="input-field">
                     <p id="cookTime3" type="text">
                         <label for="cookTime3"> Prep/Cook Time: </label>
-                        <span id="test2">&nbsp;{{Onerecipe.cook_time}}</span>
+                        <span id="test2">&nbsp;{{userData.cook_time}}</span>
                     </p>
                 </div>
 
                 <div class="input-field">
                     <p id="ingredient3" type="text">
-                        <label for="ingredient3">Instructions: {{Onerecipe.key_ingredient}}</label>
-                        <span id="test3"> &nbsp; (Spice) </span>
-                    </p>
-                </div>
-
-                <div class="input-field">
-                    <p id="chef3" type="text">
-                        <label for="chef3">Chef:</label>
-                        <span id="test4"> &nbsp; {{Onerecipe.instructions}} </span>
+                        <label for="ingredient3">Instructions: </label>
+                        <span id="test3"> &nbsp; {{userData.instructions}} </span>
                     </p>
                 </div>
 
@@ -44,5 +36,4 @@
         </div>
 
     </div>
-
 {{/each}}
