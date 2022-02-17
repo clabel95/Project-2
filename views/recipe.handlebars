@@ -1,0 +1,68 @@
+    <div id="card2">
+
+        <div class="card">
+            <div class="card-image">
+                <img src="/images/chad-montano-food .jpg">
+                <span class="card-title"> {{Onerecipe.title}} </span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red">
+                <i class="material-icons">favorite_border</i></a>
+            </div>
+
+            <div class="card-content2">
+
+                <div class="input-field">
+                    <p id="chef3" type="text">
+                        <label for="chef3">Chef: </label>
+                        <span id="test4"> &nbsp; {{Onerecipe.user.username}} </span>
+                    </p>
+                </div>
+
+                <div class="input-field">
+                    <p id="recipe2">
+                        <label for="recipe2"> Course: </label>
+                        <span id="test"> &nbsp; {{Onerecipe.course}} </span>
+                    </p>
+                </div>
+
+                <div class="input-field">
+                    <p id="cookTime2" type="text">
+                        <label for="cookTime2"> Prep/Cook Time: </label>
+                        <span id="test2">&nbsp; {{Onerecipe.cook_time}} </span>
+                    </p>
+                </div>
+
+                <div class="input-field">
+                    <p id="cookTime2" type="text">
+                        <label for="cookTime2"> Serving Size: </label>
+                        <span id="test2">&nbsp; {{Onerecipe.serving_size}} </span>
+                    </p>
+                </div>
+
+                <div class="input-field">
+                    <p id="cookTime2" type="text">
+                        <label for="cookTime2"> Vegitarian: </label>
+                        <span id="test2">&nbsp; {{Onerecipe.vegitarian}} </span>
+                    </p>
+                </div>
+
+                {{#each Onerecipe.ingredients as |ingredients| }}
+                <div class="input-field">
+                    <p id="ingredient2" type="text">
+                        <label for="ingredient2"> Ingredient: </label>
+                        <span id="test3"> &nbsp; {{ingredients.ingredients}} </span>
+                    </p>
+                </div>
+                {{/each}}
+
+                <div class="input-field">
+                    <p id="chef3" type="text">
+                        <label for="chef3">Chef:</label>
+                        <span id="test4"> &nbsp; {{Onerecipe.instructions}} </span>
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>

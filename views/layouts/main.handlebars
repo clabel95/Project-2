@@ -6,29 +6,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's Cook</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
-    {{!--
-    <link rel="shortcut icon" href="assets/images/favicon.ico"> --}}
+    {{!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/{{style}}" />
+    {{!-- <link rel="stylesheet" type="text/css" href="./css/style.css" /> --}}
+    <link rel="stylesheet" type="text/css" href="./css/{{style}}" />
 </head>
 
 <body>
-    <main>
-        {{!-- {{{body}}} --}}
+
+<main>
+    <div id="header">
+            <h3>Anyone Can Cook <span id="rat">®</span></h3>
+
+        <div id="ingredientSearch">
+            <div>
+                <span><input id="ingredient_search" type="text" placeholder="Search by ingredient" name="search">
+                <button id="search1"> <i class="tiny material-icons">search</i></button></span>
+            </div>
+        </div>
+        <div id="recipeSearch">
+            <div>
+                <input id="recipe_search" type="text" placeholder="Search for recipe" name="search">
+                <button id="search2"> <i class="tiny material-icons">search</i></button>
+            </div>
+        </div>
+        <div id="authorSearch">
+            <div>
+                <input id="author_search" type="text" placeholder="Search by author" name="search">
+                <button id="search3"> <i class="tiny material-icons">search</i></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="subHeader">
+        <div>
+            <p id="found">Found <span id="filterFound">(#)</span> Recipes:</p>
+        </div>
+        <div>
+            <button id="filter1" placeholder="filter">filter <i id="x" class=" material-icons">clear</i></button>
+        </div>
+        <div>
+            <button id="filter2" placeholder="filter">filter<i id="x" class=" material-icons">clear</i></button>
+        </div>
+        <div>
+            <button id="filter3" placeholder="filter">filter<i id="x" class=" material-icons">clear</i></button>
+        </div>
+        <div>
+            <button id="filter4" placeholder="filter">filter<i id="x" class=" material-icons">clear</i></button>
+        </div>
+
+    </div>
 
 
-
-        {{!-- <script src="/js/script.js"></script> --}}
-
-        {{{body}}}
-
-        <!-- Render script for logged in users only -->
+    <div class="column side">
+        <ul>
+            {{!-- <li><button><a href="/login" id="login"> Login</a> </button></li> --}}
+            <li>
         {{#if logged_in}}
-        <script src="./js/logout.js"></script>
+        <button id="logout">logout</button>
+        {{else}}
+        <button><a href="/login" id="login"> Login</a> </button>
+        {{!-- <button id="login"><a href="/login">login</a></button> --}}
         {{/if}}
-        <script src="/js/script.js"></script>
-    </main>
-</body>
+        </li>
+            <li><button id="my_recipes"> My Recipes</button></li>
+            <li><button id="saved_recipes"> Saved Recipes</button></li>
+            <li><button><a href="/addrecipe" id="addRecipe"> Add Recipe </a></button></li>
+            <li><button id="inspire_me"> Inspire Me </button></li>
+            <br>
+
+            <li>
+                <select class="browser-default" name="meal">
+                    <option value="" disabled selected hidden>Bre/Lun/Din</option>
+                    <option>Breakfast</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option>
+                </select>
+            </li>
+
+            <li>
+                <select class="browser-default" name="prep">
+                    <option value="" disabled selected hidden>Prep Time:</option>
+                    <option>10min</option>
+                    <option>20min</option>
+                    <option>30min</option>
+                    <option>30min+</option>
+                </select>
+            </li>
+
+            <li>
+                <button id="search">Search</button>
+            </li>
+
+        </ul>
+    </div>
+
+<!--this is all 3 cards-->
+    <div class="column middle">
+
+            {{{body}}}
+
+    </div>     
+
+</main>
+   
+     <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+        <script src="./js/logout.js"></script>
+    {{/if}} 
+  
+        <script src="./js/script.js"></script>
+</body> 
 
 </html>
